@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>navbar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         .container {
             height: 100px;
@@ -22,9 +21,9 @@
             justify-content: space-between;
         }
 
-        .container .navbar .logo {
+        .container .navbar .logo img {
             height: inherit;
-            width: 15%;
+            width: 80%;
             /* border: 1px solid purple; */
         }
 
@@ -35,7 +34,7 @@
 
         }
 
-        .container .navbar .logo h2 {
+        .container .navbar .logo {
             /* background-color: yellowgreen; */
             position: relative;
             top: 15px;
@@ -49,36 +48,13 @@
             top: 20px;
         }
 
-        #gallery {
-            position: relative;
+        .logo {
+            height:inherit;
+            width:80%;
         }
-
-        .dropdown {
-            position: absolute;
-            background-color: rgb(231, 231, 228);
-            left: 30px;
-            width: 100px;
-            padding: 10px;
-            display: none;
-        }
-
-        .dropdown .item {
-            border-bottom: 1px solid black;
-            padding-bottom: 5px;
-            padding-top: 3px;
-        }
-
-        #gallery:hover .dropdown {
-            display: block;
-        }
-        #cover .background{
-            height: 500px;
-            width: 100%;
-            background: url(images/back.jpg);
-            background-position: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
+        .container .navbar .nav list-style: hover;{
+    
+    
         }
     </style>
 </head>
@@ -88,23 +64,14 @@
     <header>
         <div class="container">
             <div class="navbar">
-                <div class="logo">
-                    <h2>pak wheels</h2>
-
+                <div class="logo"> <img src="images/logo.svg" alt="aptech logo">
                 </div>
                 <div class="nav">
                     <ul>
                         <li>home</li>
                         <li>about</li>
                         <li>contact</li>
-                        <li id="gallery">gallery
-                            <i class="fa fa-caret-down"></i>
-                            <div class="dropdown">
-                                <div class="item">indoor plant</div>
-                                <div class="item">outdoor plant</div>
-                            </div>
-
-                        </li>
+                        <li>gallery</li>
                         <li>policy</li>
                         <li>faq</li>
                     </ul>
@@ -115,13 +82,6 @@
         </div>
     </header>
     <!-- header end -->
-     <section id="cover">
-        <div class="background">
-            <div class="col">
-                <h1>welcome toour website</h1>
-            </div>
-        </div>
-     </section>
 </body>
 
 </html>
