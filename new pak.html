@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using Inter font for a clean look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles can be added here */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* A slightly darker background color to match the image */
+        .bg-custom-dark-blue {
+            background-image: linear-gradient(black,blue);
+            height: 700px;
+            width: ;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-custom-dark-blue shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-end">
+                        <!-- SVG Logo mimicking the one in the image -->
+                        <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M42.5 15C35.5 10 25 8 15 12C5 16 1.5 25 1.5 25M1.5 25L1 28.5M1.5 25C1.5 25 10 22 18.5 22C27 22 35.5 25.5 42.5 29.5M42.5 29.5C50.5 34 60 35 68.5 32C77 29 82.5 22.5 82.5 22.5M42.5 29.5L42 33M82.5 22.5L83.5 19.5" stroke="#E63946" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M82.5 22.5C75.5 27.5 65.5 30 57 28C48.5 26 42.5 19.5 42.5 19.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="5" y="38" font-family="Arial, sans-serif" font-size="6" fill="#A8B2D1">PAKISTAN'S #1 AUTOMOBILE WEBSITE</text>
+                            <text x="88" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">WHEELS</text>
+                            <text x="48" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">PAK</text>
+                            <text x="160" y="28" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">.COM</text>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="flex items-center text-gray-300 hover:text-white transition duration-150 ease-in-out">
+                        Used Cars
+                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+                    <a href="#" class="flex items-center text-gray-300 hover:text-white transition duration-150 ease-in-out">
+                        New Cars
+                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+                    <a href="#" class="flex items-center text-gray-300 hover:text-white transition duration-150 ease-in-out">
+                        Bikes
+                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+                     <a href="#" class="flex items-center text-gray-300 hover:text-white transition duration-150 ease-in-out">
+                        Auto Store
+                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-150 ease-in-out">Videos</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-150 ease-in-out">Forums</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-150 ease-in-out">Blog</a>
+                    <a href="#" class="flex items-center text-gray-300 hover:text-white transition duration-150 ease-in-out">
+                        More
+                        <span class="ml-2 text-xs bg-blue-600 text-white font-semibold px-2 py-0.5 rounded-md">New</span>
+                        <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Post Ad Button -->
+                <div class="hidden md:block">
+                    <button class="flex items-center bg-red-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-red-700 transition duration-150 ease-in-out">
+                        Post an Ad
+                        <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger Icon -->
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu, hidden by default -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Used Cars</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">New Cars</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Bikes</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Auto Store</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Videos</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Forums</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">More</a>
+                 <div class="mt-4 pt-4 border-t border-gray-700">
+                    <button class="w-full flex items-center justify-center bg-red-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-red-700 transition duration-150 ease-in-out">
+                        Post an Ad
+                        <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // JavaScript to toggle the mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

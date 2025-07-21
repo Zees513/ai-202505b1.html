@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pakwheels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .container .background {
+            height: 700px;
+            width: 100%;
+            background-image: linear-gradient(black, blue);
+            background-position: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .content {
+            height: 100px;
+            width: 100%;
+            /* border: 1px solid red; */
+        }
+
+        .content .navbar {
+            height: inherit;
+            width: 80%;
+            /* border: 1px solid yellow; */
+            margin: 0px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content .navbar .logo img {
+            height: inherit;
+            width: 50%;
+            /* border: 1px solid aqua; */
+            position: relative;
+            top: 10px;
+            position: relative;
+            left: 40px;
+
+
+        }
+
+        .content .navbar .nav {
+            height: inherit;
+            width: 11000px;
+            /* border: 1px solid pink; */
+        }
+
+        .content .navbar .nav ul li {
+            color: white;
+            display: inline-block;
+            padding: 10px;
+            position: relative;
+            top: 20px;
+
+        }
+
+        .dropdown .item {
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+            padding-top: 3px;
+        }
+
+        #usedcars:hover .dropdown {
+            background-color: white;
+            color: black;
+            display: block;
+        }
+
+        #usedcars:hover {
+            background-color: white;
+            color: black;
+
+        }
+
+        .dropdown {
+            position: absolute;
+            background-color: rgb(231, 231, 228);
+            left: 30px;
+            width: 100px;
+            padding: 10px;
+            display: none;
+        }
+        #new{
+            background-color: red;
+        }
+        #new:hover .dropdown {
+             background-color: white;
+            color: black;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="background">
+            <div class="content">
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="images/pakwheels.png" alt="logo">
+                    </div>
+                    <div class="nav">
+                        <ul>
+                            <li id="usedcars">used cars
+                                <i class="fa fa-caret-down"></i>
+                                <div class="dropdown">
+                                    <div class="item">find cars</div>
+                                    <div class="item">sell cars</div>
+                                </div>
+                            </li>
+                            <li id="usedcars">new cars
+                                <i class="fa fa-caret-down"></i>
+                                <div class="dropdown">
+                                    <div class="item">find cars</div>
+                                    <div class="item">sell cars</div>
+                                </div>
+                            </li>
+                            <li id="usedcars">bikes
+                                <i class="fa fa-caret-down"></i>
+                                <div class="dropdown">
+                                    <div class="item">find cars</div>
+                                    <div class="item">sell cars</div>
+                                </div>
+                            </li>
+                            <li id="usedcars">auto stores
+                                <i class="fa fa-caret-down"></i>
+                                <div class="dropdown">
+                                    <div class="item">find cars</div>
+                                    <div class="item">sell cars</div>
+                                </div>
+                            </li>
+                            <li>blog</li>
+                            <li>videos</li>
+                            <li>forums</li>
+                            <li id="usedcars">more
+                                <i class="fa fa-caret-down"></i>
+                                <div class="dropdown">
+                                    <div class="item">find cars</div>
+                                    <div class="item">sell cars</div>
+                                </div>
+                            </li>
+                            <li id="new">post an ad
+                                <i class="fa fa-caret-down"></i>
+                                <div class="dropdown">
+                                    <div class="item">find cars</div>
+                                    <div class="item">sell cars</div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
