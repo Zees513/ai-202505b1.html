@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            height: 950px;
+            width: 100%;
+        }
+        .row{
+            height: 900px;
+            width: 1000px;
+            border: 1px solid orange;
+            margin: 5px;
+        }
+        .col{
+            height: 200px;
+            width: 300px;
+            border: 1px solid black;
+        }
+        .child1{
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            
+        }
+        .child2{
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            background-color: yellow;
+            position: absolute;
+            left: 30px;
+            top: 25px;
+        }
+        .c2{
+            position: relative;
+            
+        }
+        .col{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col c1"></div>
+            <div class="col c2">
+                <div class="child1">A</div>
+                <div class="child2">B</div>
+            </div>
+            <div class="col c3"></div>
+        </div>
+    </div>
+</body>
+</html>
