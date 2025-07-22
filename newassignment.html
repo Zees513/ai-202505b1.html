@@ -37,9 +37,9 @@
             width: 50%;
             /* border: 1px solid aqua; */
             position: relative;
-            top: 10px;
+            top: 30px;
             position: relative;
-            left: 40px;
+            left: 80px;
 
 
         }
@@ -85,14 +85,74 @@
             padding: 10px;
             display: none;
         }
-        #new{
+
+        #new {
             background-color: red;
         }
+
         #new:hover .dropdown {
-             background-color: white;
+            background-color: white;
             color: black;
             display: block;
         }
+
+        .container .background .content .material p{
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            position: relative;
+            top: 50px;
+
+        }
+        .container .background .content .description p{
+            color: white;
+            position: relative;
+            top: 50px;
+            left: 480px;
+        }
+
+         main {
+      display: flex;
+      gap: 0; /* Ye gap hata deta hai agar flex layout use ho raha hai */
+      padding: 0;
+      margin: 0;
+    }
+
+    main div {
+      border: 1px solid white;
+      background-color: darkblue;
+      width: 200px;
+      height: 60px;
+      margin: 0; /* Beech ka margin bhi hata do */
+      padding: 0;
+    }
+
+    body {
+      background-color: darkblue;
+      margin: 0;
+    }
+    .search-bar{
+        position: relative;
+        top: 100px;
+        left: 250px;
+    }
+    .search-bar main div{
+        color:rgb(124, 116, 116);
+        text-align: center;
+        margin-top: 20px;
+        background-color: white;
+        
+    }
+    .fa-search{
+        font-size: 29px;
+        color: black;
+    }
+    #unique img{
+        height: inherit;
+    }
+    #unique{
+        background-color: greenyellow;
+    }
     </style>
 </head>
 
@@ -151,10 +211,30 @@
                                     <div class="item">sell cars</div>
                                 </div>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
+                <div class="material">
+                    <p><strong>find used cars in pakistan</strong></p>
+                </div>
+                <div class="description">
+                </div>
+                <div class="search-bar">
+                    <main>
+                        <div>car make or model</div>
+                        <div id="icon">all cities
+                            <i class="fa fa-caret-left"></i>
+                        </div>
+                        <div id="icon">price range
+                            <i class="fa fa-caret-left"></i>
+                        </div>
+                        <div id="unique">
+                            <img src="images/searcg icon.png" alt="">
+                        </div>
+                    </main>
+                </div>
+
             </div>
         </div>
 
