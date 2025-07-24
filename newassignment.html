@@ -25,28 +25,33 @@
 
         .content .navbar {
             height: inherit;
-            width: 80%;
+            width:80%;
             /* border: 1px solid yellow; */
             margin: 0px auto;
             display: flex;
             justify-content: space-between;
         }
 
-        .content .navbar .logo img {
+        .content .navbar .logo{
             height: inherit;
-            width: 50%;
+            width: 15%;
             /* border: 1px solid aqua; */
             position: relative;
-            top: 30px;
             position: relative;
-            left: 80px;
+            /* left: 80px; */
 
 
         }
+         .content .navbar .logo img{
+            height: 40px;
+            position: relative;
+            top: 25px;
+          
+         }
 
         .content .navbar .nav {
             height: inherit;
-            width: 11000px;
+            width: 80%;
             /* border: 1px solid pink; */
         }
 
@@ -87,7 +92,7 @@
         }
 
         #new {
-            background-color: red;
+            /* background-color: red; */
         }
 
         #new:hover .dropdown {
@@ -96,63 +101,82 @@
             display: block;
         }
 
-        .container .background .content .material p{
+        .container .background .content .material {
             color: white;
+            width: 50%;
+            /* border: 1px solid red; */
             font-size: 30px;
             text-align: center;
             position: relative;
-            top: 50px;
+            top: 70px;
+            margin: 0 auto;
 
         }
-        .container .background .content .description p{
-            color: white;
-            position: relative;
-            top: 50px;
-            left: 480px;
-        }
+     
 
-         main {
-      display: flex;
-      gap: 0; /* Ye gap hata deta hai agar flex layout use ho raha hai */
-      padding: 0;
-      margin: 0;
+
+     .search-bar  {
+                  display: flex;
+                  background-color: yellow;
+                  position: relative;
+                  top: 100px;
+                  width: 700px;
+                  margin: 0 auto;
+                  /* border: 1px solid red; */
+                
+
+    }
+    .search-bar div{
+            padding: 20px;
+            /* border: 1px solid black; */
+            gap: 20px;
+            margin: 0 auto;
+
+        
     }
 
-    main div {
-      border: 1px solid white;
+    /* body {
       background-color: darkblue;
-      width: 200px;
-      height: 60px;
-      margin: 0; /* Beech ka margin bhi hata do */
-      padding: 0;
-    }
-
-    body {
-      background-color: darkblue;
       margin: 0;
-    }
+    } */
     .search-bar{
-        position: relative;
-        top: 100px;
-        left: 250px;
+        /* position: relative; */
+        /* top: 100px; */
+        /* left: 250px; */
     }
-    .search-bar main div{
+    /* .search-bar main div{
         color:rgb(124, 116, 116);
         text-align: center;
         margin-top: 20px;
         background-color: white;
         
-    }
-    .fa-search{
+    } */
+    /* .fa-search{
         font-size: 29px;
         color: black;
     }
     #unique img{
-        height: inherit;
+        height: 50px;
+        
     }
     #unique{
         background-color: greenyellow;
-    }
+    } */
+     .search-bar .first{
+        margin-left: 20px;
+
+     }
+     .search-bar #unique{
+        background-color: green;
+        margin-right: -2px;
+     }
+     .nav #new{
+        background-color: red;
+        border-radius: 5px;
+     }
+     .search-bar #unique i{
+        color: white;
+     }
     </style>
 </head>
 
@@ -217,23 +241,22 @@
                 </div>
                 <div class="material">
                     <p><strong>find used cars in pakistan</strong></p>
-                </div>
-                <div class="description">
                     <p>With thousands of cars, we have just the right one for you</p>
                 </div>
+               
                 <div class="search-bar">
-                    <main>
-                        <div>car make or model</div>
+                    
+                        <div class="first">car make or model</div>
                         <div id="icon">all cities
-                            <i class="fa fa-caret-left"></i>
+                            <i class="fa fa-caret-down"></i>
                         </div>
-                        <div id="icon">price range
-                            <i class="fa fa-caret-left"></i>
+                        <div id="icon2">price range
+                            <i class="fa fa-caret-down"></i>
                         </div>
                         <div id="unique">
-                            <img src="images/searcg icon.png" alt="">
+                          <i class="fa fa-search"></i>
                         </div>
-                    </main>
+                    
                 </div>
 
             </div>
