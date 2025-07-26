@@ -192,14 +192,14 @@
         }
 
         body {
-            background: #f9f9f9;
-            padding: 30px;
+            /* background: #f9f9f9; */
+            /* padding: 30px; */
         }
 
         .container-fluid {
             width: 900px;
             margin: auto;
-            background: white;
+            /* background: white; */
             border: 1px solid #ddd;
             padding: 30px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -408,12 +408,86 @@
             box-shadow: 0 0 5px rgb(107, 105, 105);
         }
 
-        .background {
-            background-image: linear-gradient(rgb(238, 236, 236));
-            height: 500px;
+        .work .mybackground {
+            height: 600px;
             width: 100%;
+            background-image: linear-gradient(rgb(241, 240, 240));
+            background-position: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             position: relative;
+            top: 210px;
+        }
 
+        .font p {
+            position: relative;
+            top: 100px;
+            left: 20px;
+            font-size: 30px;
+        }
+
+        .current .directory {
+            height: 300px;
+            width: 300px;
+            border: 1px solid rgb(170, 162, 162);
+            display: inline-flex;
+            justify-content: space-around;
+            position: relative;
+            top: 200px;
+            left: 100px;
+            border-radius: 10px;
+
+
+        }
+
+        .current .directory .photo {
+            height: 250px;
+            width: 300px;
+            /* border: 1px solid red; */
+            border-radius: 10px;
+        }
+
+        .current .directory .photo img {
+            height: inherit;
+            width: inherit;
+            color: white;
+        }
+
+        .current .directory .des p {
+            height: 50px;
+            width: 300px;
+            /* border: 1px solid red; */
+            /* border-radius: 10px; */
+            position: relative;
+            top: 250px;
+            left: 7px;
+            display: flex;
+            background-color: white;
+        }
+
+        .current .directory .des p #name {
+            color: blue;
+        }
+
+        .current .directory .des p #price {
+            color: rgb(3, 88, 3);
+            position: relative;
+            top: 15px;
+            right: 120px;
+        }
+
+        .current .directory .des p #place {
+            color: rgb(189, 189, 189);
+            position: relative;
+            top: 27px;
+            right: 190px;
+        }
+        .define p{
+            position: relative;
+            top: 180px;
+            left: 20px;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -732,10 +806,122 @@
                 <div class="content">
                     <P>OWNERSHIP TRANSFER</P>
                 </div>
-                <div class="background"></div>
+
             </div>
 
         </div>
+        <div class="work">
+            <div class="mybackground">
+                <div class="font">
+                    <p><strong>managedBy pakwheels</strong></p>
+                </div>
+                <div class="current">
+                    <div class="directory">
+                        <div class="photo">
+                            <img src="https://cache1.pakwheels.com/ad_pictures/1259/Slide_honda-city-i-vtec-2-2019-125936713.webp"
+                                alt="">
+                        </div>
+                        <div class="des">
+                            <p>
+                                <span id="name">Honda City 2019</span>
+                                <span id="price">3,900,000</span>
+                                <span id="place">lahore</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="directory">
+                        <div class="photo">
+                            <img src="https://cache1.pakwheels.com/ad_pictures/1258/Slide_suzuki-cultus-auto-gear-shift-vxl-2018-125896539.webp"
+                                alt="">
+                        </div>
+                        <div class="des">
+                            <p>
+                                <span id="name">Honda City 2019</span>
+                                <span id="price">3,900,000</span>
+                                <span id="place">lahore</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="directory">
+                        <div class="photo">
+                            <img src="https://cache1.pakwheels.com/ad_pictures/1253/Slide_honda-civic-1-5-rs-turbo-2021-125323053.webp"
+                                alt="">
+                        </div>
+                        <div class="des">
+                            <p>
+                                <span id="name">Honda City 2019</span>
+                                <span id="price">3,900,000</span>
+                                <span id="place">lahore</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="directory">
+                        <div class="photo">
+                            <img src="https://cache2.pakwheels.com/ad_pictures/1230/Slide_toyota-corolla-xli-automatic-2019-123016581.webp"
+                                alt="">
+                        </div>
+                        <div class="des">
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="define">
+            <p><strong>FeaturedNew car</strong></p>
+        </div>
+         <div class="current">
+                    <div class="directory">
+                        <div class="photo">
+                            <img src="https://cache1.pakwheels.com/ad_pictures/1259/Slide_honda-city-i-vtec-2-2019-125936713.webp"
+                                alt="">
+                        </div>
+                        <div class="des">
+                            <p>
+                                <span id="name">Honda City 2019</span>
+                                <span id="price">3,900,000</span>
+                                <span id="place">lahore</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="directory">
+                        <div class="photo">
+                            <img src="https://cache1.pakwheels.com/ad_pictures/1258/Slide_suzuki-cultus-auto-gear-shift-vxl-2018-125896539.webp"
+                                alt="">
+                        </div>
+                        <div class="des">
+                            <p>
+                                <span id="name">Honda City 2019</span>
+                                <span id="price">3,900,000</span>
+                                <span id="place">lahore</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="directory">
+                        <div class="photo">
+                            <img src="https://cache1.pakwheels.com/ad_pictures/1253/Slide_honda-civic-1-5-rs-turbo-2021-125323053.webp"
+                                alt="">
+                        </div>
+                        <div class="des">
+                            <p>
+                                <span id="name">Honda City 2019</span>
+                                <span id="price">3,900,000</span>
+                                <span id="place">lahore</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="directory">
+                        <div class="photo">
+                            <img src="https://cache2.pakwheels.com/ad_pictures/1230/Slide_toyota-corolla-xli-automatic-2019-123016581.webp"
+                                alt="">
+                        </div>
+                        <div class="des">
+                          
+                        </div>
+                    </div>
+                </div>
+    </div>
+
 
 </body>
 
