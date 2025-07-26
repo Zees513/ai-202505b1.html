@@ -7,8 +7,12 @@
     <title>pakwheels</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
+        body {
+            overflow-x: hidden;
+        }
+
         .container .background {
-            height: 900px;
+            height: 500px;
             width: 100%;
             background-image: linear-gradient(black, blue);
             background-position: fixed;
@@ -118,7 +122,7 @@
 
         .search-bar {
             display: flex;
-            background-color: yellow;
+            background-color: white;
             position: relative;
             top: 100px;
             width: 700px;
@@ -284,7 +288,8 @@
 
         .browse {
             background-image: linear-gradient(rgb(245, 243, 243));
-            height: 500px;
+            /* height: 500px; */
+            padding: 20px;
             width: 100%;
         }
 
@@ -303,16 +308,26 @@
             top: 10px;
         }
 
+        .picture {
+            /* background-color: yellow; */
+            height: auto;
+            margin: 0 auto;
+            width: 100%;
+            /* background-color: yellow; */
+            padding: 10px;
+        }
+
         .picture .img {
+            margin: 5px;
             height: 150px;
-            width: 200px;
+            width: 150px;
             border: 1px solid rgb(180, 176, 176);
             display: inline-flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            position: relative;
-            top: 80px;
-            left: 3%;
+            /* position: relative; */
+            /* top: 80px; */
+            left: 2%;
             justify-items: flex;
             background-color: white;
             border-radius: 10px;
@@ -346,14 +361,10 @@
 
         .product .box {
             height: 100px;
-            width: 500px;
+            width: 400px;
             border: 1px solid rgb(170, 162, 162);
-            display: inline-flex;
-            justify-content: space-around;
-            position: relative;
-            top: 200px;
-            left: 100px;
-            border-radius: 10px;
+
+
 
         }
 
@@ -364,49 +375,6 @@
             font-size: 30px;
         }
 
-        .product .box .pic {
-            height: 80px;
-            width: 150px;
-            /* border: 1px solid red; */
-            margin-top: 10px;
-            margin-left: 10px;
-
-        }
-
-        .product .box .wheel {
-            height: 30px;
-            width: 150px;
-            /* border: 1px solid yellow; */
-            position: relative;
-            top: 10px;
-            left: 20px;
-        }
-
-        .product .box .content {
-            height: 50px;
-            width: 150px;
-            /* border: 1px solid aqua; */
-            position: relative;
-            top: 45px;
-            right: 143px;
-        }
-
-        .product .box .pic img {
-            height: inherit;
-        }
-
-        .product .box .wheel p {
-            color: rgb(47, 47, 235);
-            text-align: center;
-        }
-
-        .product .box .pic .content p {
-            text-align: center;
-        }
-
-        .box:hover {
-            box-shadow: 0 0 5px rgb(107, 105, 105);
-        }
 
         .work .mybackground {
             height: 600px;
@@ -435,7 +403,7 @@
             justify-content: space-around;
             position: relative;
             top: 200px;
-            left: 100px;
+            left: 30px;
             border-radius: 10px;
 
 
@@ -483,13 +451,52 @@
             top: 27px;
             right: 190px;
         }
-        .define p{
+
+        .define p {
             position: relative;
             top: 180px;
             left: 20px;
             font-size: 30px;
         }
+
+        #pakOffer #container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        #pakOffer #container .row {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: space-around;
+        }
+
+        #pakOffer #container .row .col {
+            height: 120px;
+            width: 500px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        .offer {
+            height: 120px;
+            width: 150px;
+            border: 1px solid red;
+        }
+
+        .offer img {
+            height: inherit;
+            width: inherit;
+        }
+
+        .row .col .work p{
+            height: 40px;
+            width: 100px;
+            border: 1px solid rgb(34, 66, 66);
+
+        }
     </style>
+
 </head>
 
 <body>
@@ -599,7 +606,7 @@
             </div>
         </div>
     </div>
-    </div>
+
     <div class="browse">
         <h1>BrowseUsedCars</h1>
         <ul>
@@ -719,208 +726,176 @@
                 </div>
             </div>
         </div>
-        <div class="head">
-            <p><strong>pakwheels Offering</strong></p>
-        </div>
-        <div class="product">
-            <div class="box">
-                <div class="pic">
-                    <img src="https://wsa4.pakwheels.com/assets/pw-sifm-logo-revamp-c64d4b2bc18e317bf786c0b77506cd3b836a0a9f5a98f5df8174a9e01066e71b.png"
-                        alt="">
-                </div>
-                <div class="wheel">
-                    <p><strong>pakwheels</strong></p>
-                </div>
-                <div class="content">
-                    <p>SELL IT FOR ME</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="https://wsa3.pakwheels.com/assets/pw-auction-sheet-revamp-925ea98a37d632d0d35f98f899ce53b8a12999d1200e08b22ceb7065d98a1db2.png"
-                        alt="">
-                </div>
-                <div class="wheel">
-                    <p><strong>pakwheels</strong></p>
-                </div>
-                <div class="content">
-                    <P>AUCTION SHEET VERIFICATION</P>
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="https://wsa1.pakwheels.com/assets/pw-inspection-revamp-f9dad8be7156f0741992510b1aecbfd35772586d137d4f8e4a1bf117a8b8fb22.png"
-                        alt="">
-                </div>
-                <div class="wheel">
-                    <p><strong>pakwheels</strong></p>
-                </div>
-                <div class="content">
-                    <P>CAR INSPECTION</P>
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="https://wsa1.pakwheels.com/assets/pw-car-insurance-revamp-a76435af1d48b09a39ad41a2762f27b131b230d1f41d4f6f86adfbaad8336dc6.png"
-                        alt="">
-                </div>
-                <div class="wheel">
-                    <p><strong>pakwheels</strong></p>
-                </div>
-                <div class="content">
-                    <P>CAR INSURANCE</P>
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="https://wsa4.pakwheels.com/assets/pw-car-finance-revamp-d9dcd4ac7dbb7eb421f0e9121392e4aa59972ad10b3070230d084a122a78f4cd.png"
-                        alt="">
-                </div>
-                <div class="wheel">
-                    <p><strong>pakwheels</strong></p>
-                </div>
-                <div class="content">
-                    <P>CAR FINANCE</P>
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="https://wsa2.pakwheels.com/assets/pw-car-registration-revamp-d084294febe0f77a1b5aff7233e2dc3271ed15507836acfd56ce625b71d9f9ed.png"
-                        alt="">
-                </div>
-                <div class="wheel">
-                    <p><strong>pakwheels</strong></p>
-                </div>
-                <div class="content">
-                    <P>CAR REGISTRATION</P>
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="https://wsa4.pakwheels.com/assets/pw-ownership-transfer-revamp-2979c697d6b9f0cd0bf202c7ad58f9478a9c2d58a2259ee73bcb72eaaddb30c8.png"
-                        alt="">
-                </div>
-                <div class="wheel">
-                    <p><strong>pakwheels</strong></p>
-                </div>
-                <div class="content">
-                    <P>OWNERSHIP TRANSFER</P>
-                </div>
-
-            </div>
-
-        </div>
-        <div class="work">
-            <div class="mybackground">
-                <div class="font">
-                    <p><strong>managedBy pakwheels</strong></p>
-                </div>
-                <div class="current">
-                    <div class="directory">
-                        <div class="photo">
-                            <img src="https://cache1.pakwheels.com/ad_pictures/1259/Slide_honda-city-i-vtec-2-2019-125936713.webp"
-                                alt="">
-                        </div>
-                        <div class="des">
-                            <p>
-                                <span id="name">Honda City 2019</span>
-                                <span id="price">3,900,000</span>
-                                <span id="place">lahore</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="directory">
-                        <div class="photo">
-                            <img src="https://cache1.pakwheels.com/ad_pictures/1258/Slide_suzuki-cultus-auto-gear-shift-vxl-2018-125896539.webp"
-                                alt="">
-                        </div>
-                        <div class="des">
-                            <p>
-                                <span id="name">Honda City 2019</span>
-                                <span id="price">3,900,000</span>
-                                <span id="place">lahore</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="directory">
-                        <div class="photo">
-                            <img src="https://cache1.pakwheels.com/ad_pictures/1253/Slide_honda-civic-1-5-rs-turbo-2021-125323053.webp"
-                                alt="">
-                        </div>
-                        <div class="des">
-                            <p>
-                                <span id="name">Honda City 2019</span>
-                                <span id="price">3,900,000</span>
-                                <span id="place">lahore</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="directory">
-                        <div class="photo">
-                            <img src="https://cache2.pakwheels.com/ad_pictures/1230/Slide_toyota-corolla-xli-automatic-2019-123016581.webp"
-                                alt="">
-                        </div>
-                        <div class="des">
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="define">
-            <p><strong>FeaturedNew car</strong></p>
-        </div>
-         <div class="current">
-                    <div class="directory">
-                        <div class="photo">
-                            <img src="https://cache1.pakwheels.com/ad_pictures/1259/Slide_honda-city-i-vtec-2-2019-125936713.webp"
-                                alt="">
-                        </div>
-                        <div class="des">
-                            <p>
-                                <span id="name">Honda City 2019</span>
-                                <span id="price">3,900,000</span>
-                                <span id="place">lahore</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="directory">
-                        <div class="photo">
-                            <img src="https://cache1.pakwheels.com/ad_pictures/1258/Slide_suzuki-cultus-auto-gear-shift-vxl-2018-125896539.webp"
-                                alt="">
-                        </div>
-                        <div class="des">
-                            <p>
-                                <span id="name">Honda City 2019</span>
-                                <span id="price">3,900,000</span>
-                                <span id="place">lahore</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="directory">
-                        <div class="photo">
-                            <img src="https://cache1.pakwheels.com/ad_pictures/1253/Slide_honda-civic-1-5-rs-turbo-2021-125323053.webp"
-                                alt="">
-                        </div>
-                        <div class="des">
-                            <p>
-                                <span id="name">Honda City 2019</span>
-                                <span id="price">3,900,000</span>
-                                <span id="place">lahore</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="directory">
-                        <div class="photo">
-                            <img src="https://cache2.pakwheels.com/ad_pictures/1230/Slide_toyota-corolla-xli-automatic-2019-123016581.webp"
-                                alt="">
-                        </div>
-                        <div class="des">
-                          
-                        </div>
-                    </div>
-                </div>
     </div>
+    <!-- pakwheels Offering s   tarts -->
+    <section id="pakOffer">
+        <div id="container">
+            <div class="" style="width: 400px;padding:40px ; ">
+                <h1>pakwheels Offering</h1>
+            </div>
+            <div class="row">
+                <div class="col col-1">
+                    <div class="offer">
+                        <img src="images/offer1.png" alt="">
+                    </div>
+                    <div class="work">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col col-2">
+                    <div class="offer">
+                        <img src="images/offer2.png" alt="">
+                    </div>
+                    <div class="work"></div>
+                </div>
+                <div class="col col-3">
+                    <div class="offer">
+                        <img src="images/offer3.png" alt="">
+                    </div>
+                    <div class="work"></div>
+                </div>
+                <div class="col col-4">
+                    <div class="offer">
+                        <img src="images/offer4.png" alt="">
+                    </div>
+                    <div class="work"></div>
+                </div>
+                <div class="col col-5">
+                    <div class="offer">
+                        <img src="images/offer5.png" alt="">
+                    </div>
+                    <div class="work"></div>
+                </div>
+                <div class="col col-6">
+                    <div class="offer">
+                        <img src="images/offer6.png" alt="">
+                    </div>
+                    <div class="work"></div>
+                </div>
+                <div class="col col-7">
+                    <div class="offer">
+                        <img src="images/offer7.png" alt="">
+                    </div>
+                    <div class="work"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- pakwheels Offering end -->
+    <div class="work">
+        <div class="mybackground">
+            <div class="font">
+                <p><strong>managedBy pakwheels</strong></p>
+            </div>
+            <div class="current">
+                <div class="directory">
+                    <div class="photo">
+                        <img src="https://cache1.pakwheels.com/ad_pictures/1244/tn_honda-city-aspire-2-2014-124454539.webp"
+                            alt="">
+                    </div>
+                    <div class="des">
+                        <p>
+                            <span id="name">Honda City 2019</span>
+                            <span id="price">3,900,000</span>
+                            <span id="place">lahore</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="directory">
+                    <div class="photo">
+                        <img src="https://cache1.pakwheels.com/ad_pictures/1258/Slide_suzuki-cultus-auto-gear-shift-vxl-2018-125896539.webp"
+                            alt="">
+                    </div>
+                    <div class="des">
+                        <p>
+                            <span id="name">Honda City 2019</span>
+                            <span id="price">3,900,000</span>
+                            <span id="place">lahore</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="directory">
+                    <div class="photo">
+                        <img src="https://cache1.pakwheels.com/ad_pictures/1253/Slide_honda-civic-1-5-rs-turbo-2021-125323053.webp"
+                            alt="">
+                    </div>
+                    <div class="des">
+                        <p>
+                            <span id="name">Honda City 2019</span>
+                            <span id="price">3,900,000</span>
+                            <span id="place">lahore</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="directory">
+                    <div class="photo">
+                        <img src="https://cache2.pakwheels.com/ad_pictures/1230/Slide_toyota-corolla-xli-automatic-2019-123016581.webp"
+                            alt="">
+                    </div>
+                    <div class="des">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="define">
+        <p><strong>FeaturedNew car</strong></p>
+    </div>
+    <div class="current">
+        <div class="directory">
+            <div class="photo">
+                <img src="https://cache1.pakwheels.com/ad_pictures/1259/Slide_honda-city-i-vtec-2-2019-125936713.webp"
+                    alt="">
+            </div>
+            <div class="des">
+                <p>
+                    <span id="name">Honda City 2019</span>
+                    <span id="price">3,900,000</span>
+                    <span id="place">lahore</span>
+                </p>
+            </div>
+        </div>
+        <div class="directory">
+            <div class="photo">
+                <img src="https://cache1.pakwheels.com/ad_pictures/1258/Slide_suzuki-cultus-auto-gear-shift-vxl-2018-125896539.webp"
+                    alt="">
+            </div>
+            <div class="des">
+                <p>
+                    <span id="name">Honda City 2019</span>
+                    <span id="price">3,900,000</span>
+                    <span id="place">lahore</span>
+                </p>
+            </div>
+        </div>
+        <div class="directory">
+            <div class="photo">
+                <img src="https://cache1.pakwheels.com/ad_pictures/1253/Slide_honda-civic-1-5-rs-turbo-2021-125323053.webp"
+                    alt="">
+            </div>
+            <div class="des">
+                <p>
+                    <span id="name">Honda City 2019</span>
+                    <span id="price">3,900,000</span>
+                    <span id="place">lahore</span>
+                </p>
+            </div>
+        </div>
+        <div class="directory">
+            <div class="photo">
+                <img src="https://cache2.pakwheels.com/ad_pictures/1230/Slide_toyota-corolla-xli-automatic-2019-123016581.webp"
+                    alt="">
+            </div>
+            <div class="des">
+
+            </div>
+        </div>
+    </div>
+
 
 
 </body>
