@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <style>
+        .container {
+    height: 100px;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.container .navbar {
+    height: 100px;
+    width: 80%;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .navbar .logo {
+    height: 100%;
+    width: 20%;
+    /* border: 1px solid indigo; */
+}
+
+.container .navbar .logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.container .navbar .nav {
+    width: 75%;
+    /* border: 1px solid blue; */
+}
+
+.container .navbar .nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.container .navbar .nav ul li {
+    position: relative;
+    margin: 0 auto;
+    /* cursor: pointer; */
+}
+
+.container .navbar .nav ul li:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(231, 231, 228);
+    width: 150px;
+    padding: 10px;
+    display: none;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    z-index: 1;
+}
+
+.dropdown .item {
+    padding: 8px;
+    /* border-bottom: 1px solid black; */
+}
+
+.nav ul li:hover .dropdown {
+    display: block;
+    background-color: aqua;
+    color: black;
+}
+.container .col h1{
+    margin: 0 auto;
+    text-align: center;
+}
+.GALLERY .col img {
+            height: auto;
+            width: 100%;
+            /* border-radius: 10px; */
+        }
+
+        .GALLERY {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-rows: 200px;
+            grid-auto-flow: dense;
+            grid-gap: 10px;
+        }
+
+        .col {
+            display: flex;
+        }
+
+        .col-1 {
+            grid-column: span 2;
+        }
+
+        .col-2 {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        .col-3 {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        .col-4 {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        .col-5 {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+        .GALLERY .col img:hover{
+            transform: rotateZ(360deg);
+            transition: all 1s ;
+            border-radius: 50%;
+        }
+        .GALLERY{
+            position: relative;
+            top: 50px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logo7.png" alt="logo">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li id="home">home
+                        <i class="fa fa-caret-down"></i>
+                        <div class="dropdown">
+                            <div class="item">quran</div>
+                            <div class="item">qaida</div>
+                        </div>
+                    </li>
+                    <li id="home">contact
+                        <i class="fa fa-caret-down"></i>
+                        <div class="dropdown">
+                            <div class="item">quran</div>
+                            <div class="item">qaida</div>
+                        </div>
+                    </li>
+                    <li id="home">faq
+                        <i class="fa fa-caret-down"></i>
+                        <div class="dropdown">
+                            <div class="item">quran</div>
+                            <div class="item">qaida</div>
+                        </div>
+                    </li>
+                    <li id="home">courses
+                        <i class="fa fa-caret-down"></i>
+                        <div class="dropdown">
+                            <div class="item">quran</div>
+                            <div class="item">qaida</div>
+                        </div>
+                    </li>
+                    <li id="home">gallery
+                        <i class="fa fa-caret-down"></i>
+                        <div class="dropdown">
+                            <div class="item">quran</div>
+                            <div class="item">qaida</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <h1>OUR PRODUCTS</h1>
+        </div>
+        <div class="GALLERY">
+            <div class="col col-1"><img src="images/new1.jpeg" alt="car"></div>
+        <div class="col col-2"><img src="images/new2.jpeg" alt="car"></div>
+        <div class="col col-3"><img src="images/new9.jpeg" alt="car"></div>
+        <div class="col col-4"><img src="images/new6.jpeg" alt="car"></div>
+        <div class="col col-5"><img src="images/new7.jpeg" alt="car"></div>
+        </div>
+    </div>
+</body>
+
+</html>
