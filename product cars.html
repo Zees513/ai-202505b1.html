@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Styling Products</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-content h3 {
+        font-size: 18px;
+        margin: 0 0 10px;
+        color: #333;
+    }
+
+    .card-content p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #035b61;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #02282b;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #02393d;
+    }
+    body{
+        background-color:#02393d ;
+    }
+    h1{
+        color: white;
+    }
+</style>
+</head>
+<body bg-color="black">
+
+<h1 id="typing"></h1>
+
+<div class="container">
+    <div class="card"><img src="images/cozy.jpg"><div class="card-content"><h3>Cozy Sofa</h3><p>Soft and stylish sofa for your living room.</p><div class="price">$399</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/coffee.webp"><div class="card-content"><h3>Wooden Coffee Table</h3><p>Elegant table made from premium oak wood.</p><div class="price">$199</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/lamp.webp"><div class="card-content"><h3>Modern Lamp</h3><p>Brighten your space with this stylish lamp.</p><div class="price">$79</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/bed.webp"><div class="card-content"><h3>Luxury Bed</h3><p>Comfort and elegance combined.</p><div class="price">$899</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/art.webp"><div class="card-content"><h3>Wall Art</h3><p>Beautiful decor to enhance any room.</p><div class="price">$59</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/set.webp"><div class="card-content"><h3>Dining Set</h3><p>Perfect for family dinners.</p><div class="price">$699</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/rug.jpg"><div class="card-content"><h3>Soft Rug</h3><p>Plush and cozy under your feet.</p><div class="price">$129</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/curtains.webp"><div class="card-content"><h3>Elegant Curtains</h3><p>Privacy with style.</p><div class="price">$89</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/book shelf.webp"><div class="card-content"><h3>Wooden Bookshelf</h3><p>Organize your books beautifully.</p><div class="price">$249</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/mirror.webp"><div class="card-content"><h3>Decorative Mirror</h3><p>Add depth and style to your room.</p><div class="price">$139</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/arm chair.avif"><div class="card-content"><h3>Comfort Armchair</h3><p>Perfect for reading and relaxing.</p><div class="price">$229</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/office desk.jpg"><div class="card-content"><h3>Office Desk</h3><p>Stylish and functional workspace.</p><div class="price">$299</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/kitchen set.jpg"><div class="card-content"><h3>Kitchen Set</h3><p>Modern essentials for cooking lovers.</p><div class="price">$499</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/indoor planters.jpg"><div class="card-content"><h3>Indoor Planters</h3><p>Bring greenery inside your home.</p><div class="price">$45</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/tv stand.webp"><div class="card-content"><h3>TV Stand</h3><p>Stylish storage for your TV area.</p><div class="price">$189</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/crystal.webp"><div class="card-content"><h3>Crystal Chandelier</h3><p>Elegant lighting for special spaces.</p><div class="price">$599</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/bed side.jpg"><div class="card-content"><h3>Bedside Table</h3><p>Compact and functional.</p><div class="price">$99</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/outdoor.jpg"><div class="card-content"><h3>Outdoor Chair</h3><p>Relax in your backyard.</p><div class="price">$159</div><a href="#" class="btn">Buy Now</a></div></div>
+    <div class="card"><img src="images/cabnit.jpg"><div class="card-content"><h3>Storage Cabinet</h3><p>Stylish storage for your home.</p><div class="price">$279</div><a href="#" class="btn">Buy Now</a></div></div>
+</div>
+
+<script>
+    const texts = ["Welcome to My Website!", "We Style Your Home 🏠", "Quality You Can Trust"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 100;
+    const deletingSpeed = 50;
+    const delayBetweenWords = 1500;
+
+    function typeEffect() {
+      const currentText = texts[textIndex];
+      const typingElement = document.getElementById("typing");
+
+      if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, delayBetweenWords);
+        return;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+    }
+
+    typeEffect();
+  </script>
+
+</body>
+</html>
