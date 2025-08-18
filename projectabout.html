@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Home Styler</title>
+<style>
+    body {
+
+        font-family: 'Poppins', sans-serif;
+        background-color: #02282b;
+        color: #333;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+        position: relative;
+        height: 90vh;
+        background: url('images/app.webp') no-repeat center/cover;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 50px;
+        color: white;
+    }
+
+    .hero-overlay {
+        background-color: rgba(245, 240, 230, 0.9);
+        padding: 20px 40px;
+        border-radius: 10px;
+        animation: fadeUp 1.2s ease-out forwards;
+    }
+
+    .hero-overlay h1 {
+        font-size: 3rem;
+        color: #2f4f4f;
+    }
+
+    .hero-overlay p {
+        font-size: 1.3rem;
+        color: #555;
+        margin-top: 8px;
+    }
+
+    /* ===== About Story ===== */
+    .about-story {
+        max-width: 1100px;
+        margin: 80px auto;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        padding:  20px;
+    }
+
+    .about-story img {
+        width: 50%;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .about-story-text {
+        flex: 1;
+    }
+
+    .about-story-text h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    .about-story-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: white;
+    }
+
+    /* ===== Gallery ===== */
+    .gallery {
+        background-color: #2f4f4f;
+        padding: 50px 20px;
+    }
+
+    .gallery h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: white;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.4s ease;
+    }
+
+    .gallery-grid img:hover {
+        transform: scale(1.05);
+    }
+
+    /* ===== Mission ===== */
+    .mission {
+        background-color: #141414;
+        padding: 60px 20px;
+        text-align: center;
+        color: white;
+    }
+    
+    .mission h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .mission p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: auto;
+        color: 2f4f4f ;
+    }
+
+    /* ===== Testimonials ===== */
+    .testimonials {
+        padding: 60px 20px;
+        background-color: #646765;
+    }
+
+    .testimonials h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+        color: black;
+    }
+
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .testimonial {
+        background-color: #fafafa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .testimonial p {
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+
+    .testimonial h4 {
+        color: #2f4f4f;
+        margin: 0;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+        background-color: #2f4f4f;
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .cta button {
+        background-color: #ffb347;
+        color: white;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .cta button:hover {
+        background-color: #ff9800;
+    }
+
+    /* ===== Animations =====
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+        .about-story {
+            flex-direction: column;
+        }
+        .about-story img {
+            width: 100%;
+        }
+    } */
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay">
+        <h1>LIVE BEAUTIFULLY</h1>
+        <p>Design that makes every home a masterpiece</p>
+    </div>
+</section>
+
+<!-- About Story -->
+<section class="about-story">
+    <img src="images/lv2.webp" alt="Interior Design">
+    <div class="about-story-text">
+        <h2>Our Story</h2>
+        <p>We started with a dream to turn houses into homes — warm, inviting, and styled to perfection. From selecting the perfect color palette to sourcing the finest furniture, our journey has been about creating spaces that reflect personality and elegance.</p>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+    <h2>Our Creations</h2>
+    <div class="gallery-grid">
+        <img src="images/d2.jpg" alt="">
+        <img src="images/d1.jpg" alt="">
+        <img src="images/h1.jpg" alt="">
+        <img src="images/d3.jpg" alt="">
+        <img src="images/h6.jpeg" alt="">
+        <img src="images/d4.jpg" alt="">
+        <img src="images/d6.jpg" alt="">
+        <img src="images/d5.jpg" alt="">
+    </div>
+</section>
+
+<!-- Mission -->
+<section class="mission">
+    <h2>Our Mission</h2>
+    <p>To create inspiring interiors that bring joy, comfort, and style into everyday living — blending aesthetics with functionality.</p>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <h2>What Clients Say</h2>
+    <div class="testimonial-grid">
+        <div class="testimonial">
+            <p>"Absolutely loved the transformation! My home feels like a dream now."</p>
+            <h4>- Sarah M.</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Professional, creative, and truly passionate about design."</p>
+            <h4>- James K.</h4>
+        </div>
+        <div class="testimonial">
+            <p>"They listened to our ideas and made them even better. Highly recommend!"</p>
+            <h4>- Lisa T.</h4>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <h2>Ready to Style Your Home?</h2>
+    <button>Contact Us Today</button>
+</section>
+
+</body>
+</html>

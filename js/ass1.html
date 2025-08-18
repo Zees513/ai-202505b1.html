@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+const storedemail="zk.work99@gmail.com";
+let users=[];
+
+function adduser(){
+    let email=prompt("enter your email");
+    let password=prompt("enter your password");
+    let confirmpassword=prompt("confirm your password");
+
+    if(email !== storedemail){
+        alert("email does not match")
+    }
+    if(password !== confirmpassword){
+        alert("password does not match")
+    }
+    else({email:storedemail,password:confirmpassword});
+    alert("user add successfully")
+}
+adduser();
+
+    </script>
+</body>
+</html>

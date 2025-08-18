@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopLink – Buyer & Seller Marketplace (Demo)</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#6c5ce7;
+      --brand-2:#00d2d3;
+    }
+    html,body{font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;background:#0f1221;color:#e9ecf7}
+    .glass{background: rgba(255,255,255,.06); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.1)}
+    .brand-gradient{background: linear-gradient(135deg, var(--brand), var(--brand-2));}
+    .brand-text{background: linear-gradient(135deg, var(--brand), var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .card{border-radius: 1.25rem; border:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03)}
+    .shadow-soft{box-shadow: 0 10px 30px rgba(0,0,0,.35)}
+    .nav-pills .nav-link.active{background: linear-gradient(90deg, var(--brand), var(--brand-2));}
+    .badge-soft{background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15)}
+    .product-card:hover{transform: translateY(-4px) scale(1.01); transition: .2s ease;}
+    .price{font-weight:800}
+    .rating i{letter-spacing: 2px}
+    .pointer{cursor: pointer}
+    .offcanvas{--bs-offcanvas-bg: #0f1221; --bs-offcanvas-color:#e9ecf7}
+    .table{--bs-table-bg: transparent; --bs-table-border-color: rgba(255,255,255,.12); color:#dfe3f9}
+    .form-control, .form-select{background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.2); color:#fff}
+    .form-control:focus, .form-select:focus{box-shadow:0 0 0 .25rem rgba(108,92,231,.25); border-color: var(--brand)}
+    .btn-brand{background: linear-gradient(135deg, var(--brand), var(--brand-2)); border:0}
+    .btn-brand:hover{opacity:.9}
+    .circle{width:48px;height:48px;border-radius:999px;overflow:hidden}
+    .avatar{width:100%;height:100%;object-fit:cover}
+    .img-fit{width:100%;height:180px;object-fit:cover;border-radius:1rem}
+    .toast-container{z-index: 2000}
+    .searchbar{border-radius:999px}
+    .tag{font-size:.75rem}
+    .seller-chip{background: rgba(0,210,211,.15);border:1px solid rgba(0,210,211,.3)}
+    .link-muted{color:#a8b0d3}
+    .link-muted:hover{color:#fff}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg glass sticky-top shadow-soft">
+    <div class="container py-2">
+      <a class="navbar-brand fw-bold brand-text" href="#">ShopLink</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link link-light" href="#catalog" data-smooth>Catalog</a></li>
+          <li class="nav-item"><a class="nav-link link-light" href="#dashboard" data-smooth>Seller Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link link-light" href="#inbox" data-smooth>Inbox</a></li>
+        </ul>
+        <div class="d-flex gap-2 align-items-center">
+          <div class="input-group searchbar me-2">
+            <span class="input-group-text bg-transparent border-0"><i class="bi bi-search"></i></span>
+            <input id="globalSearch" type="text" class="form-control bg-transparent border-0" placeholder="Search products..." />
+          </div>
+          <button class="btn btn-outline-light position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas">
+            <i class="bi bi-bag"></i>
+            <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </button>
+          <div class="dropdown">
+            <button class="btn btn-brand dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i> Mode</button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#" id="modeBuyer">Buyer Mode</a></li>
+              <li><a class="dropdown-item" href="#" id="modeSeller">Seller Mode</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="container my-4">
+    <div class="p-4 p-md-5 rounded-4 brand-gradient text-white shadow-soft">
+      <div class="row align-items-center g-4">
+        <div class="col-md-8">
+          <h1 class="display-5 fw-bold">Connect Buyers & Sellers. Instantly.</h1>
+          <p class="lead mb-4">A mini marketplace demo built with React + Bootstrap + jQuery. Add products, chat, and place mock orders — all in one file using localStorage.</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="#catalog" data-smooth class="btn btn-light btn-lg"><i class="bi bi-grid-3x3-gap"></i> Browse Catalog</a>
+            <a href="#dashboard" data-smooth class="btn btn-outline-light btn-lg"><i class="bi bi-speedometer2"></i> Seller Dashboard</a>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <img class="img-fluid" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=900&auto=format&fit=crop" alt="market" style="border-radius:1.5rem"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="root" class="container pb-5"></main>
+
+  <!-- Offcanvas Cart -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Your Cart</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="cartBody"></div>
+  </div>
+
+  <!-- Message Modal -->
+  <div class="modal fade" id="messageModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content glass">
+        <div class="modal-header">
+          <h5 class="modal-title">Messages</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="messageThread" class="d-flex flex-column gap-3"></div>
+        </div>
+        <div class="modal-footer">
+          <input id="messageInput" class="form-control" placeholder="Write a message..."/>
+          <button id="sendMessageBtn" class="btn btn-brand">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- React 18 UMD -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const { useEffect, useMemo, useState } = React;
+
+    // --- Utilities & Store (localStorage backed) ---
+    const uid = (p='id') => p + '_' + Math.random().toString(36).slice(2,9);
+    const load = (k,def) => { try{ return JSON.parse(localStorage.getItem(k)) ?? def }catch{ return def } };
+    const save = (k,v) => localStorage.setItem(k, JSON.stringify(v));
+
+    const seedProducts = [
+      {id:uid('p'), title:'Aurora Headphones', price: 129.99, stock: 14, sellerId:'s1', img:'https://images.unsplash.com/photo-1518441902110-4b6b0f39ec5e?q=80&w=900&auto=format&fit=crop', tags:['audio','tech'], rating:4.7, reviews:[]},
+      {id:uid('p'), title:'Nimbus Backpack', price: 79.00, stock: 35, sellerId:'s2', img:'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=900&auto=format&fit=crop', tags:['bags','travel'], rating:4.4, reviews:[]},
+      {id:uid('p'), title:'Zen Lamp', price: 49.50, stock: 22, sellerId:'s1', img:'https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=900&auto=format&fit=crop', tags:['home','decor'], rating:4.9, reviews:[]},
+      {id:uid('p'), title:'Pulse Smartwatch', price: 199.00, stock: 9, sellerId:'s3', img:'https://images.unsplash.com/photo-1518444520973-7d6a9dca5d78?q=80&w=900&auto=format&fit=crop', tags:['wearables','tech'], rating:4.5, reviews:[]},
+    ];
+
+    const seedUsers = {
+      buyers: [{id:'b1', name:'Demo Buyer', avatar:'https://i.pravatar.cc/100?img=12'}],
+      sellers: [
+        {id:'s1', name:'Luna Store', avatar:'https://i.pravatar.cc/100?img=5'},
+        {id:'s2', name:'Orbit Mart', avatar:'https://i.pravatar.cc/100?img=7'},
+        {id:'s3', name:'Tech Hive', avatar:'https://i.pravatar.cc/100?img=15'},
+      ]
+    };
+
+    const Store = {
+      key: 'shoplink_v1',
+      init(){
+        const s = load(this.key, null);
+        if(!s){
+          const state = {
+            users: seedUsers,
+            products: seedProducts,
+            cart: {buyerId:'b1', items:[]},
+            orders: [],
+            messages: [],
+            activeSellerId: 's1',
+            mode: 'buyer'
+          };
+          save(this.key, state);
+        }
+      },
+      get(){ return load(this.key, {}) },
+      set(v){ save(this.key, v); window.dispatchEvent(new Event('store:updated')) },
+      update(fn){ const s=this.get(); fn(s); this.set(s) },
+    };
+
+    Store.init();
+
+    // --- Small jQuery helpers ---
+    $(document).on('click','[data-smooth]', function(e){ e.preventDefault(); const href=$(this).attr('href');
+      $('html, body').animate({scrollTop: $(href).offset().top - 72}, 400);
+    });
+
+    const toast = (msg) => {
+      const id = uid('toast');
+      const el = $(`\n        <div id="${id}" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">\n          <div class="d-flex">\n            <div class="toast-body">${msg}</div>\n            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>\n          </div>\n        </div>`);
+      $('.toast-container').append(el);
+      const t = new bootstrap.Toast(el[0]); t.show();
+      setTimeout(()=>el.remove(), 4000);
+    };
+
+    // --- React Components ---
+    const Avatar = ({src, size=40}) => (
+      <span className="circle d-inline-flex align-items-center justify-content-center" style={{width:size, height:size}}>
+        <img className="avatar" src={src} alt="avatar" />
+      </span>
+    );
+
+    const Stars = ({value=0}) => {
+      const full = Math.round(value);
+      return <span className="rating">{[1,2,3,4,5].map(i=> <i key={i} className={`bi ${i<=full? 'bi-star-fill':'bi-star'}`}></i>)}</span>
+    };
+
+    const ProductCard = ({p, onAdd, onMessage}) => (
+      <div className="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div className="card product-card h-100 p-3 shadow-soft">
+          <img className="img-fit" src={p.img} alt={p.title} />
+          <div className="d-flex align-items-center justify-content-between mt-3">
+            <span className="badge badge-soft seller-chip"><i className="bi bi-shop"></i> {sellerById(p.sellerId).name}</span>
+            <span className="small text-secondary">Stock: {p.stock}</span>
+          </div>
+          <h5 className="mt-2">{p.title}</h5>
+          <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-center gap-2"><Stars value={p.rating}/><span className="small">{p.rating}</span></div>
+            <div className="price h5 mb-0">${p.price.toFixed(2)}</div>
+          </div>
+          <div className="mt-3 d-flex gap-2">
+            <button className="btn btn-brand flex-fill" onClick={()=>onAdd(p)}><i className="bi bi-bag-plus"></i> Add</button>
+            <button className="btn btn-outline-light" title="Message seller" onClick={()=>onMessage(p)}><i className="bi bi-chat"></i></button>
+          </div>
+          <div className="mt-2 d-flex gap-1 flex-wrap">
+            {p.tags?.map(t=> <span key={t} className="badge badge-soft tag">#{t}</span>)}
+          </div>
+        </div>
+      </div>
+    );
+
+    const sellerById = (id) => Store.get().users.sellers.find(s=>s.id===id) || {name:'Unknown'};
+
+    const Cart = ({openCheckout}) => {
+      const s = Store.get();
+      const items = s.cart.items.map(it => ({...it, product: s.products.find(p=>p.id===it.productId)}));
+      const total = items.reduce((a,b)=> a + b.qty*b.product.price, 0);
+      const remove = (pid) => Store.update(s=>{ s.cart.items = s.cart.items.filter(i=>i.productId!==pid) });
+      const updateQty = (pid, q) => Store.update(s=>{ const it=s.cart.items.find(i=>i.productId===pid); if(it){ it.qty=Math.max(1, Number(q)||1) }});
+
+      useEffect(()=>{ $('#cartCount').text(items.reduce((a,b)=>a+b.qty,0)) }, [items.length]);
+
+      return (
+        <div>
+          {items.length===0? <p className="text-secondary">Your cart is empty.</p> : (
+            <div className="d-flex flex-column gap-3">
+              {items.map(it=> (
+                <div key={it.productId} className="d-flex align-items-center gap-3">
+                  <img src={it.product.img} width="64" height="64" style={{objectFit:'cover',borderRadius:12}}/>
+                  <div className="flex-fill">
+                    <div className="d-flex justify-content-between">
+                      <strong>{it.product.title}</strong>
+                      <span>${(it.product.price*it.qty).toFixed(2)}</span>
+                    </div>
+                    <div className="d-flex align-items-center gap-2 mt-1">
+                      <input type="number" min="1" value={it.qty} onChange={e=>updateQty(it.productId, e.target.value)} className="form-control form-control-sm" style={{width:90}}/>
+                      <button className="btn btn-sm btn-outline-light" onClick={()=>remove(it.productId)}><i className="bi bi-trash"></i></button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <hr/>
+              <div className="d-flex justify-content-between">
+                <strong>Total</strong>
+                <strong>${total.toFixed(2)}</strong>
+              </div>
+              <button className="btn btn-brand" onClick={openCheckout}><i className="bi bi-credit-card"></i> Checkout</button>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    const BuyerView = () => {
+      const [q, setQ] = useState('');
+      const s = Store.get();
+      const products = s.products;
+
+      useEffect(()=>{
+        const handler = () => setQ(document.getElementById('globalSearch').value || '');
+        $('#globalSearch').on('input', handler);
+        return ()=> $('#globalSearch').off('input', handler);
+      }, []);
+
+      const filtered = useMemo(()=>{
+        const term = q.toLowerCase();
+        return products.filter(p => [p.title, ...(p.tags||[]), sellerById(p.sellerId).name]
+          .join(' ').toLowerCase().includes(term));
+      }, [q, products.length]);
+
+      const addToCart = (p) => {
+        Store.update(s=>{
+          const it = s.cart.items.find(i=>i.productId===p.id);
+          if(it){ it.qty++ } else { s.cart.items.push({productId:p.id, qty:1}) }
+        });
+        toast('Added to cart');
+      };
+
+      const openMsg = (p) => {
+        openMessageModal({withUserId: p.sellerId, aboutProduct: p});
+      };
+
+      useEffect(()=>{
+        const comp = ReactDOM.createRoot(document.getElementById('cartBody'));
+        const openCheckout = ()=> setShowCheckout(true);
+        comp.render(<Cart openCheckout={openCheckout}/>);
+      });
+
+      const [showCheckout, setShowCheckout] = useState(false);
+
+      return (
+        <section id="catalog" className="my-4">
+          <div className="d-flex align-items-center justify-content-between mb-3">
+            <h2 className="fw-bold mb-0">Catalog</h2>
+            <div className="d-flex align-items-center gap-2">
+              <span className="text-secondary small">{filtered.length} items</span>
+              <button className="btn btn-outline-light btn-sm" onClick={()=>{ Store.set({...Store.get(), products: seedProducts}); toast('Reset to sample products'); }}>Reset</button>
+            </div>
+          </div>
+          <div className="row g-3">
+            {filtered.map(p=> <ProductCard key={p.id} p={p} onAdd={addToCart} onMessage={openMsg}/>) }
+          </div>
+
+          {showCheckout && <Checkout onClose={()=>setShowCheckout(false)}/>}        
+        </section>
+      );
+    };
+
+    const Checkout = ({onClose}) => {
+      const s = Store.get();
+      const items = s.cart.items.map(it => ({...it, product: s.products.find(p=>p.id===it.productId)}));
+      const total = items.reduce((a,b)=> a + b.qty*b.product.price, 0);
+
+      const placeOrder = () => {
+        if(items.length===0) return toast('Cart is empty');
+        Store.update(s=>{
+          const order = { id:uid('o'), buyerId:s.cart.buyerId, items: s.cart.items, total, status:'Processing', date:new Date().toISOString() };
+          s.orders.push(order);
+          s.cart.items = [];
+        });
+        $('.offcanvas').offcanvas?.('hide');
+        toast('Order placed!');
+        onClose();
+      };
+
+      return (
+        <div className="card p-4 mt-4">
+          <div className="d-flex justify-content-between align-items-center">
+            <h4 className="mb-0"><i className="bi bi-receipt"></i> Checkout</h4>
+            <button className="btn btn-outline-light btn-sm" onClick={onClose}>Close</button>
+          </div>
+          <div className="mt-3">
+            {items.map(it=> (
+              <div key={it.productId} className="d-flex justify-content-between">
+                <span>{it.product.title} × {it.qty}</span>
+                <span>${(it.product.price*it.qty).toFixed(2)}</span>
+              </div>
+            ))}
+            <hr/>
+            <div className="d-flex justify-content-between h5">
+              <span>Total</span>
+              <span>${total.toFixed(2)}</span>
+            </div>
+            <div className="row g-2 mt-3">
+              <div className="col-md-6"><input className="form-control" placeholder="Full name"/></div>
+              <div className="col-md-6"><input className="form-control" placeholder="Email"/></div>
+              <div className="col-12"><input className="form-control" placeholder="Address"/></div>
+              <div className="col-md-6"><input className="form-control" placeholder="City"/></div>
+              <div className="col-md-3"><input className="form-control" placeholder="ZIP"/></div>
+              <div className="col-md-3"><select className="form-select"><option>Visa</option><option>MasterCard</option><option>COD</option></select></div>
+            </div>
+            <button className="btn btn-brand w-100 mt-3" onClick={placeOrder}><i className="bi bi-box-seam"></i> Place Order</button>
+          </div>
+        </div>
+      );
+    };
+
+    const SellerDashboard = () => {
+      const [tab, setTab] = useState('products');
+      const s = Store.get();
+      const sellerId = s.activeSellerId;
+      const myProducts = s.products.filter(p=>p.sellerId===sellerId);
+      const myOrders = s.orders.filter(o => o.items.some(it => s.products.find(p=>p.id===it.productId)?.sellerId===sellerId));
+
+      const addProduct = (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const p = { id:uid('p'), title:f.title.value, price: Number(f.price.value||0), stock: Number(f.stock.value||0), sellerId, img:f.img.value||'https://picsum.photos/600/400', tags:f.tags.value.split(',').map(t=>t.trim()).filter(Boolean), rating: 0, reviews:[] };
+        Store.update(s=>{ s.products.unshift(p) });
+        f.reset();
+        toast('Product added');
+      };
+
+      const removeProduct = (id) => Store.update(s=>{ s.products = s.products.filter(p=>p.id!==id) });
+
+      const updateOrderStatus = (oid, status) => Store.update(s=>{ const o=s.orders.find(o=>o.id===oid); if(o) o.status=status });
+
+      return (
+        <section id="dashboard" className="my-5">
+          <div className="d-flex align-items-center justify-content-between">
+            <h2 className="fw-bold">Seller Dashboard</h2>
+            <div className="d-flex align-items-center gap-2">
+              <Avatar src={sellerById(sellerId).avatar}/>
+              <span>{sellerById(sellerId).name}</span>
+              <select className="form-select form-select-sm w-auto" value={sellerId} onChange={e=>Store.update(s=>{ s.activeSellerId = e.target.value })}>
+                {Store.get().users.sellers.map(u=> <option key={u.id} value={u.id}>{u.name}</option>)}
+              </select>
+            </div>
+          </div>
+
+          <ul className="nav nav-pills gap-2 mt-3">
+            {['products','orders','inbox'].map(x=> (
+              <li className="nav-item" key={x}>
+                <button className={`nav-link ${tab===x?'active':''}`} onClick={()=>setTab(x)}><i className={`bi ${x==='products'?'bi-box':'', x==='orders'?'bi-truck':'', x==='inbox'?'bi-chat-left-text':''}`}></i> {x[0].toUpperCase()+x.slice(1)}</button>
+              </li>
+            ))}
+          </ul>
+
+          {tab==='products' && (
+            <div className="row mt-3 g-3">
+              <div className="col-lg-4">
+                <div className="card p-3 h-100">
+                  <h5>Add Product</h5>
+                  <form onSubmit={addProduct} className="d-flex flex-column gap-2">
+                    <input name="title" required className="form-control" placeholder="Title"/>
+                    <div className="row g-2">
+                      <div className="col"><input name="price" type="number" step="0.01" min="0" className="form-control" placeholder="Price"/></div>
+                      <div className="col"><input name="stock" type="number" min="0" className="form-control" placeholder="Stock"/></div>
+                    </div>
+                    <input name="img" className="form-control" placeholder="Image URL"/>
+                    <input name="tags" className="form-control" placeholder="tags, comma, separated"/>
+                    <button className="btn btn-brand">Create</button>
+                  </form>
+                </div>
+              </div>
+              <div className="col-lg-8">
+                <div className="row g-3">
+                  {myProducts.map(p=> (
+                    <div className="col-12 col-md-6" key={p.id}>
+                      <div className="card p-3 h-100">
+                        <div className="d-flex gap-3">
+                          <img src={p.img} width="96" height="96" style={{objectFit:'cover',borderRadius:12}}/>
+                          <div className="flex-fill">
+                            <div className="d-flex justify-content-between align-items-start">
+                              <strong>{p.title}</strong>
+                              <button className="btn btn-sm btn-outline-light" onClick={()=>removeProduct(p.id)}><i className="bi bi-trash"></i></button>
+                            </div>
+                            <div className="small text-secondary">${p.price.toFixed(2)} • Stock {p.stock}</div>
+                            <div className="mt-1"><Stars value={p.rating}/> <span className="small">({p.reviews.length} reviews)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {tab==='orders' && (
+            <div className="card p-3 mt-3">
+              <h5>Orders</h5>
+              <div className="table-responsive">
+                <table className="table align-middle">
+                  <thead><tr><th>Order</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
+                  <tbody>
+                    {myOrders.map(o=> (
+                      <tr key={o.id}>
+                        <td className="small">{o.id}</td>
+                        <td>{new Date(o.date).toLocaleString()}</td>
+                        <td>
+                          {o.items.map(it=>{
+                            const p = Store.get().products.find(p=>p.id===it.productId);
+                            return <span key={it.productId} className="badge badge-soft me-1">{p?.title} × {it.qty}</span>
+                          })}
+                        </td>
+                        <td>${o.total.toFixed(2)}</td>
+                        <td>
+                          <select className="form-select form-select-sm w-auto" value={o.status} onChange={e=>updateOrderStatus(o.id, e.target.value)}>
+                            {['Processing','Packed','Shipped','Delivered','Cancelled'].map(s=> <option key={s} value={s}>{s}</option>)}
+                          </select>
+                        </td>
+                      </tr>
+                    ))}
+                    {myOrders.length===0 && <tr><td colSpan="5" className="text-center text-secondary">No orders yet</td></tr>}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {tab==='inbox' && <Inbox forSellerId={sellerId}/>}            
+        </section>
+      );
+    };
+
+    const Inbox = ({forSellerId=null}) => {
+      const s = Store.get();
+      const messages = s.messages.filter(m => forSellerId ? (m.from===forSellerId || m.to===forSellerId) : true);
+      const grouped = Object.groupBy? Object.groupBy(messages, m=>[m.from,m.to].sort().join('-')) : groupByPoly(messages, m=>[m.from,m.to].sort().join('-'));
+
+      function groupByPoly(arr, fn){ return arr.reduce((a,x)=>{ const k=fn(x); (a[k]=a[k]||[]).push(x); return a },{}) }
+
+      const threads = Object.entries(grouped).sort((a,b)=> new Date(b[1].at(-1).ts)-new Date(a[1].at(-1).ts));
+
+      return (
+        <section id="inbox" className="mt-3">
+          <div className="row g-3">
+            <div className="col-lg-4">
+              <div className="card p-3 h-100">
+                <h5>Threads</h5>
+                <div className="list-group list-group-flush">
+                  {threads.map(([key, msgs])=>{
+                    const last = msgs.at(-1);
+                    const otherId = [last.from, last.to].find(x=> x !== (forSellerId || 'b1'));
+                    const other = sellerById(otherId) || Store.get().users.buyers[0];
+                    return (
+                      <a href="#" key={key} className="list-group-item list-group-item-action bg-transparent link-light" onClick={()=> openMessageModal({withUserId: otherId})}>
+                        <div className="d-flex align-items-center gap-2">
+                          <Avatar src={other.avatar}/>
+                          <div>
+                            <div className="fw-semibold">{other.name || 'User'}</div>
+                            <div className="small text-secondary text-truncate" style={{maxWidth:240}}>{last.text}</div>
+                          </div>
+                        </div>
+                      </a>
+                    );
+                  })}
+                  {threads.length===0 && <div className="text-secondary small">No messages yet</div>}
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-8">
+              <div className="card p-4 h-100 d-flex align-items-center justify-content-center text-center text-secondary">
+                <i className="bi bi-chat-dots display-6"></i>
+                <p>Select a thread to view messages.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // --- Message Modal Logic (jQuery + React interop) ---
+    function openMessageModal({withUserId, aboutProduct=null}){
+      const s = Store.get();
+      const me = s.mode==='buyer' ? s.users.buyers[0].id : s.activeSellerId;
+      const other = withUserId;
+      const modal = new bootstrap.Modal(document.getElementById('messageModal'));
+
+      function renderThread(){
+        const msgs = Store.get().messages.filter(m => (m.from===me && m.to===other) || (m.from===other && m.to===me));
+        const el = document.getElementById('messageThread');
+        el.innerHTML = '';
+        msgs.forEach(m=>{
+          const isMe = m.from===me;
+          const bubble = $(`\n            <div class="d-flex ${isMe?'justify-content-end':''}">\n              <div class="p-2 rounded-4 ${isMe?'brand-gradient':'glass'}" style="max-width:80%">\n                ${m.text}\n                <div class="small text-secondary mt-1">${new Date(m.ts).toLocaleString()}</div>\n              </div>\n            </div>`);
+          $(el).append(bubble);
+        });
+        el.scrollTop = el.scrollHeight;
+      }
+
+      $('#sendMessageBtn').off('click').on('click', ()=>{
+        const text = $('#messageInput').val().trim();
+        if(!text) return; 
+        Store.update(s=>{ s.messages.push({id:uid('m'), from:me, to:other, text, ts:new Date().toISOString(), productId: aboutProduct?.id||null }) });
+        $('#messageInput').val('');
+        renderThread();
+      });
+
+      $('#messageModal').off('shown.bs.modal').on('shown.bs.modal', ()=>{ renderThread(); $('#messageInput').trigger('focus') });
+      modal.show();
+    }
+
+    const App = () => {
+      const [state, setState] = useState(Store.get());
+      useEffect(()=>{
+        const sync = () => setState(Store.get());
+        window.addEventListener('store:updated', sync);
+        return ()=> window.removeEventListener('store:updated', sync);
+      }, []);
+
+      useEffect(()=>{
+        // Update mode toggles
+        document.getElementById('modeBuyer').onclick = (e)=>{ e.preventDefault(); Store.update(s=>{ s.mode='buyer' }); toast('Switched to Buyer Mode') };
+        document.getElementById('modeSeller').onclick = (e)=>{ e.preventDefault(); Store.update(s=>{ s.mode='seller' }); toast('Switched to Seller Mode') };
+      }, []);
+
+      return (
+        <div className="">
+          {state.mode==='buyer' && <BuyerView/>}
+          {state.mode==='seller' && <SellerDashboard/>}
+          <Footer/>
+        </div>
+      );
+    };
+
+    const Footer = () => (
+      <footer className="container mt-5">
+        <div className="card p-4">
+          <div className="row align-items-center g-3">
+            <div className="col-md-8">
+              <h5 className="mb-1">Build & Extend</h5>
+              <p className="text-secondary mb-0">This is a front‑end only demo. Data is stored in <code>localStorage</code>. You can hook it to a real backend (PHP, Node, etc.) easily.</p>
+            </div>
+            <div className="col-md-4 text-md-end">
+              <a className="btn btn-outline-light me-2" href="#dashboard" data-smooth><i className="bi bi-speedometer2"></i> Seller</a>
+              <a className="btn btn-brand" href="#catalog" data-smooth><i className="bi bi-grid"></i> Buyer</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App/>);
+  </script>
+</body>
+</html>
