@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <script>
-        let nationality = prompt("pleaseenter your nationality");
-        let age = prompt("enter your age ")
-        if(nationality == "pakistani"){
-            if(age  >= 18){
-                document.write("you are eligible for vote")
-            }
-            else{
-                document.write("you are not eligible for vote")
-            }
-        }
-        else{
+        let nationality = prompt("please enter your nationality");
+        let age = parseInt(prompt("enter your age"))
+        let religion = prompt("enter your religion");
+        if (nationality == "pakistani") {}
+        else {
             document.write("only allow pakistanis")
         }
+        if (age >= "18") {
+            
+        }
+        else  {
+            document.write("you are not eligible for vote")
+        }
+         if (religion == "islam") {
+            
+        }
+        else {
+            document.write("must be religion islam")
+        }
+
+
     </script>
 </body>
+
 </html>
