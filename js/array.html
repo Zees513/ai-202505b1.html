@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <SCRIPT>
+
+
+        let courses=[
+            ["HTML","CSS","JAVASCRIPT","BOOTSTRAP","JQUERY"],
+            ["JSON","REACT JS","ANGULAR","PHP","XML"],
+            ["NODE JS","PYTHON","C#","SQL SERVER","MYSQL"]
+        ]
+
+       let table =  `<table id="print" border="2" cellpadding="10", cellspacing="5">
+        <tr>
+            
+           <th>Course1</th>
+           <th>Course2</th>
+           <th>Course3</th>
+           <th>Course4</th>
+           <th>Course5</th>
+        </tr>`
+    
+
+       
+
+    
+        for(value of courses){
+  table += `<tr>`
+                for(data of value){
+                   
+                table += `<td>${data}</td>`
+                    
+                }
+                
+               table += `</tr>`
+                
+        }
+
+     table += '</table>'
+
+     document.write(table)
+
+      
+    </SCRIPT>
+</body>
+</html>
