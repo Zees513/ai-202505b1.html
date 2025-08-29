@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Colors Table</title>
 </head>
 <body>
+  <h2>Colors Table</h2>
+  <table border="1" id="colorTable">
+    <tr>
+      <th>S.NO</th>
+      <th>Color Name</th>
+    </tr>
+  </table>
+
+  <script>
+    let colors = ["Red", "Green", "Blue", "Yellow", "Orange", "Purple"];
+
+    let table = document.getElementById("colorTable");
     
+    for (let i = 0; i < colors.length; i++) {
+      let row = table.insertRow();   
+      let cell1 = row.insertCell(0); 
+      let cell2 = row.insertCell(1); 
 
-
-
-    <script src="./js/our.js"></script>
+      cell1.innerHTML = i;        
+      cell2.innerHTML = colors[i];   
+    }
+  </script>
 </body>
 </html>

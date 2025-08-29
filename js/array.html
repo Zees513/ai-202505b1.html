@@ -1,53 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    
-
-    <SCRIPT>
-
-
-        let courses=[
-            ["HTML","CSS","JAVASCRIPT","BOOTSTRAP","JQUERY"],
-            ["JSON","REACT JS","ANGULAR","PHP","XML"],
-            ["NODE JS","PYTHON","C#","SQL SERVER","MYSQL"]
-        ]
-
-       let table =  `<table id="print" border="2" cellpadding="10", cellspacing="5">
-        <tr>
-            
-           <th>Course1</th>
-           <th>Course2</th>
-           <th>Course3</th>
-           <th>Course4</th>
-           <th>Course5</th>
-        </tr>`
-    
-
-       
-
-    
-        for(value of courses){
-  table += `<tr>`
-                for(data of value){
-                   
-                table += `<td>${data}</td>`
-                    
-                }
-                
-               table += `</tr>`
-                
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
         }
 
-     table += '</table>'
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
 
-     document.write(table)
+        th {
+            background: #007BFF;
+            color: white;
+        }
 
-      
-    </SCRIPT>
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+    </table>
+
+
+    <script>
+
+
+        let data = [
+            ["zeeshan", "22", "karachi"],
+            ["hamza", "18", "lahore"],
+            ["ali", "16", "islamabad"]
+        ]
+
+        let tbody = document.getElementById("table-body")
+
+        for (let row of data) {
+            let tr = document.createElement("tr")
+
+
+            for (let cell of row) {
+                let td = document.createElement("td")
+                td.textContent = cell;
+                tr.appendChild(td);
+            }
+
+            tbody.appendChild(tr);
+        }
+
+
+
+
+
+
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Dimensional Array Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Multi-Dimensional Array to Table</h2>
+
+  <!-- Table structure -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- Data will come from JS -->
+    </tbody>
+  </table>
+
+  <script>
+    // Multi-dimensional array
+    let data = [
+      ["Ali", 22, "Karachi"],
+      ["Sara", 25, "Lahore"],
+      ["John", 30, "Islamabad"],
+      ["Ayesha", 28, "Quetta"]
+    ];
+
+    // Target tbody
+    let  tbody = document.getElementById("table-body");
+
+    // Use for...of loop
+    for (let row of data) {
+      const tr = document.createElement("tr");
+
+      for (let cell of row) {
+        const td = document.createElement("td");
+        td.textContent = cell;
+        tr.appendChild(td);
+      }
+
+      tbody.appendChild(tr);
+    }
+  </script>
+
+</body>
+</html>
+
+
