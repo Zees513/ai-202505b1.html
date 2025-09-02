@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+
+
+        function print(name) {
+      document.write("Hello " + name + "!<br>");
+    }
+
+    let userName = prompt("Enter your name");
+    print(userName);
+
+    // second function
+    function add(num1, num2) {
+      let sum = num1 + num2;
+      document.write("Parameterized function result: " + sum);
+    }
+
+    let num1 = parseInt(prompt("Enter your 1st number"));
+    let num2 = parseInt(prompt("Enter your 2nd number"));
+    add(num1, num2 + "<br>");
+
+
+    function feedback(message) {
+          return "return function:" + message  
+    }
+       let paragraph=prompt("enter your massage")
+       let massage=print(paragraph)
+       document.write(massage)
+
+    
+    </script>
+</body>
+</html>
