@@ -7,17 +7,24 @@
 </head>
 <body>
     
-<button onclick="myapp()">click now!</button>
+
 
 
 
 
 
     <script>
-        let myapp =()=>{
-            let take = prompt("enter your name")
-            document.write(take)
+
+          var num3=+prompt("enter your number")
+            var num4 = +prompt("enter your number")
+        let myapp =(num1 , num2)=>{
+            
+            document.write(num1 + num2)
         }
+
     </script>
+
+
+    <button onclick="myapp(num3 , num4)">addition</button>
 </body>
 </html>
