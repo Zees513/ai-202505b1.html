@@ -1,0 +1,28 @@
+[
+    {
+        "p_name" : "watch",
+        "p_price" : "$200",
+        "p_des" : "it's very opulent and luxurious",
+        "p_img" : "https://currenwatches.com.pk/cdn/shop/products/H605ac289725845a6af7f30c94a7b612et.jpg?v=1670503666&width=1445"
+    },
+    {
+        "p_name" : "bag",
+        "p_price" : "$250",
+        "p_des" : "it's very opulent and luxurious",
+         "p_img" : "https://www.catfootwear.com.pk/cdn/shop/products/84066-521PeoriaUniSchoolBag20L_MochilasrPET_1.jpg?v=1755459287"
+    },
+    {
+        "p_name" : "football",
+        "p_price" : "$230",
+        "p_des" : "it's very opulent and luxurious",
+        "p_img" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1Xy7iCwBYQUjG8YKgIk4f6wDtSC8obBR0Q&s"
+
+    },
+    {
+        "p_name" : "keyboard",
+        "p_price" : "$290",
+        "p_des" : "it's very opulent and luxurious",
+        "p_img" : "https://media.wired.com/photos/65b0438c22aa647640de5c75/16:9/w_2400,h_1350,c_limit/Mechanical-Keyboard-Guide-Gear-GettyImages-1313504623.jpg"
+
+    }
+]
