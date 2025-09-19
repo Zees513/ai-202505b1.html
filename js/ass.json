@@ -1,0 +1,52 @@
+[
+  {
+    "roll_no": "101",
+    "name": "Ali Khan",
+    "courses": ["Mathematics", "Physics", "Computer Science"]
+  },
+  {
+    "roll_no": "102",
+    "name": "Sara Ahmed",
+    "courses": ["English", "Biology", "Chemistry"]
+  },
+  {
+    "roll_no": "103",
+    "name": "Hassan Raza",
+    "courses": ["History", "Political Science", "Sociology"]
+  },
+  {
+    "roll_no": "104",
+    "name": "Ayesha Malik",
+    "courses": ["Mathematics", "Economics", "Statistics"]
+  },
+  {
+    "roll_no": "105",
+    "name": "Bilal Hussain",
+    "courses": ["Computer Science", "Database Systems", "Networking"]
+  },
+  {
+    "roll_no": "106",
+    "name": "Fatima Noor",
+    "courses": ["Psychology", "Philosophy", "English Literature"]
+  },
+  {
+    "roll_no": "107",
+    "name": "Usman Sheikh",
+    "courses": ["Mechanical Engineering", "Thermodynamics", "Robotics"]
+  },
+  {
+    "roll_no": "108",
+    "name": "Maryam Iqbal",
+    "courses": ["Fine Arts", "Design", "Art History"]
+  },
+  {
+    "roll_no": "109",
+    "name": "Ahmed Ali",
+    "courses": ["Chemistry", "Biotechnology", "Environmental Science"]
+  },
+  {
+    "roll_no": "110",
+    "name": "Zainab Javed",
+    "courses": ["Business Management", "Marketing", "Accounting"]
+  }
+]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Table</title>
+    <style>
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align:center;">Student Data Table</h2>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Roll Number</th>
+                <th>Name</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+
+    <script>
+        let html = "";
+        fetch("ass.json")   
+            .then(response => response.json())
+            .then(json => {
+                let html = "";
+                for (let data of json) {
+                    html += `
+            <tr>
+              <td>${data.roll_no}</td>
+              <td>${data.name}</td>
+              <td>${data.courses.join(", ")}</td>
+            </tr>`;
+                }
+                document.querySelector("#studentTable tbody").innerHTML = html;
+            })
+        
+    </script>
+
+</body>
+
+</html>

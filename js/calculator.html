@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simple Calculator</title>
+  <title>Document</title>
 </head>
+
 <body>
- <h2>simple Calculator</h2>
+  <h2>simple Calculator</h2>
 
-<input type="text" placeholder="enter your 1st number" id="num1">
-<input type="text" placeholder="enter your 2nd number" id="num2">
+  <input type="number" id="num1" placeholder="First number">
+  <input type="number" id="num2" placeholder="Second number">
 
-<select name="operator" id="operator">
+  <select id="operator">
     <option value="+">+</option>
-    <option value="+">-</option>
-    <option value="+">*</option>
-    <option value="+">/</option>
-</select>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
 
-<button onclick="calculate()">submit</button>
-  
+  <button onclick="calculate()">submit</button>
 
-<script>
-    const num1 = parseFloat(document.getElementById("num1").innerText=num1)
-    const num2 = parseFloat(document.getElementById("num2").innerText=num1)
-</script>
+  <div id="result"></div>
 
-  
+  <script>
+   function calculate() {
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  let operator = document.getElementById("operator").value;
+
+  let result = "";
+
+  if (isNaN(num1) || isNaN(num2)) {
+    result = "Please enter valid numbers.";
+  } else {
+    switch (operator) {
+      case "+":
+        result = num1 + num2;
+        break;
+      case "-":
+        result = num1 - num2;
+        break;
+      case "*":
+        result = num1 * num2;
+        break;
+      case "/":
+        result = num1 / num2;
+        break;
+      default:
+        result = "Invalid operator.";
+    }
+  }
+
+  document.getElementById("result").innerText = "Result: " + result;
+}
+
+  </script>
 </body>
+
 </html>
