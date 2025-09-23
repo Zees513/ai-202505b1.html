@@ -31,11 +31,13 @@
 
 
     <script>
-     let para = document.getElementById("para")
+    //  let para = document.getElementById("para")
+    let para =document.querySelectorAll("#para")
      let array = ["html","css","js","bootstrap"]
-        document.querySelectorAll("#para")
-        for(data of array) {
-            document.write(data,"<br>")
+            for(data of array) {
+            document.write( "<h3 style='color: red;'>", data,"</h3>")
+         
+
         }
         
     </script>
