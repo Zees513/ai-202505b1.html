@@ -95,18 +95,24 @@
 <body>
     <!-- From Uiverse.io by alexruix -->
     <div class="form-box" style="margin: 0 auto;position: relative;top: 130px;">
-        <form class="form">
+        <form id="form">
             <span class="title">Sign up</span>
             <span class="subtitle">Create a free account with your email.</span>
             <div class="form-container">
-                <input type="text" class="input" placeholder="Full Name">
-                <input type="email" class="input" placeholder="Email">
-                <input type="password" class="input" placeholder="Password">
+                <input type="text" id="name" placeholder="Full Name">
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="pass" placeholder="Password">
             </div>
-            <button>Sign up</button>
+            <button type="submit" id="btn">Sign up</button>
         </form>
         
     </div>
+
+
+
+
+
+    <script src="./form.js"></script>
 </body>
 
 </html>
