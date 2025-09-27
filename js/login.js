@@ -1,19 +1,19 @@
-let login = document.getElementById("login")
+let login = document.getElementById("Login")
 
-login.addEventListener("submit",function(e){
+login.addEventListener("submit", function (e) {
     e.preventDefault()
 
-    let email = document.getElementById("email")
-    let pass = document.getElementById("pass")
+    let email = document.getElementById("email").value
+    let pass = document.getElementById("pass").value
 
-    let users = JSON.parse (localStorage.getItem("users")) || [];
-    let founduers = users.find(u=>u.email === email && u.pass === pass)
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let foundusers = users.find(u => u.email === email && u.pass === pass)
 
-    if (founduser) {
-        localStorage.setItem("logeddinuser",JSON.stringify(founduser))
+    if (foundusers) {
+        localStorage.setItem("loggedInUser", JSON.stringify(foundusers))
         location.assign('welcome.html')
-} else {
+    } else {
         alert("email and password incorrect")
-        location.assign('welcome.html')
+        location.assign('login.html')
     }
 })

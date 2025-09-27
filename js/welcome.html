@@ -6,6 +6,35 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>welcome</h1>
+    <h1 id="welcome"></h1>
+    <button id="logout">logout</button>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let users = JSON.parse(localStorage.getItem('loggedInUser')) || [];
+
+        if (users.length == 0 ) {
+            alert('please login first')
+            location.assign('login.html')
+            
+        } else {
+            document.getElementById("welcome").innerText = "welcome " + users.name
+            
+        }
+
+        let btn = document.getElementById("logout");
+        btn.addEventListener("click",function(){
+            localStorage.removeItem("loggedInUser")
+            location.assign('login.html')
+        })
+    </script>
 </body>
 </html>
